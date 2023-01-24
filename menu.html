@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+
+    <div ng-app="meuApp" ng-controller="controlador">
+
+        <button ng-click="minhaFuncao()">Menu</button>
+
+        <div ng-show="exibir">
+            <h1>Menu</h1>
+            <h4>Pizza</h4>
+            <h4>Pasta</h4>
+            <h4>Peixe</h4>
+        </div>
+        
+    </div>
+
+    <script>
+        var app = angular.module('meuApp',[]);
+        app.controller('controlador',function($scope){
+            $scope.exibir = false;
+            $scope.minhaFuncao = function(){
+                $scope.exibir = !$scope.exibir;
+            }
+        });
+    </script>
+</body>
+</html>

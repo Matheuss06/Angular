@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="">
+
+    <form name="form">
+        Email: <input type="email" name="email" ng-model="text">
+        <span ng-show="form.email.$error.email">Digite um e-mail valido</span>
+    </form>
+
+    <style>
+        input.ng-invalid{
+            background-color: rgb(251,205,219);
+        }
+
+        input.ng-valid{
+            background-color: rgb(199,240,199);
+        }
+    </style>
+
+    <form>
+        Escolha um tópico:
+        <input type="radio" ng-model="opcao" value="cachorros">Cachorros
+        <input type="radio" ng-model="opcao" value="gatos">Gatos
+        <input type="radio" ng-model="opcao" value="passaros">Pássaros
+    </form>
+
+    <div ng-switch="opcao">
+        <div ng-switch-when="cachorros">
+            <h1>Cachorros</h1>
+            <p>Bem-vindo a um mundo de cães.</p>
+        </div>
+
+        <div ng-switch-when="gatos">
+            <h1>Gatos</h1>
+            <p>Bem-vindo a um mundo de gatos.</p>
+        </div>
+
+        <div ng-switch-when="passaros">
+            <h1>Pássaros</h1>
+            <p>Bem-vindo a um mundo de pássaros.</p>
+        </div>
+    </div>
+
+</body>
+</html>

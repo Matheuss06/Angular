@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="meuApp">
+
+    <div ng-controller="meuController">
+
+        <h1 ng-mousemove="contador = contador + 1">Passe o mouse aqui!</h1>
+        <h2>{{ contador }}</h2>
+
+        <h1 ng-mousemove="minhaFuncao($event)">Passe o mouse aqui!</h1>
+        <p>Coordenadas: {{ x + ', ' + y }}</p>
+
+    </div>
+
+    <script>
+        var app = angular.module('meuApp',[]);
+        app.controller('meuController', function($scope){
+            $scope.contador = 0;
+
+            $scope.minhaFuncao = function(coordernada) {
+                $scope.x = coordernada.clientX;
+                $scope.y = coordernada.clientY;
+            }
+        });
+    </script>
+</body>
+</html>
